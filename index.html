@@ -48,7 +48,15 @@
     .button.primary { background: var(--accent); color: white; }
     .button.secondary { color: var(--accent); background: white; }
     .profile-card { border: 1px solid var(--line); border-radius: 14px; background: white; padding: 24px; box-shadow: 0 12px 30px rgba(25,50,70,.06); }
-    .profile-mark { width: 88px; height: 88px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: white; font-size: 1.7rem; font-weight: 750; margin-bottom: 17px; }
+    .profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
     .profile-card h2 { margin: 0 0 7px; font-size: 1.1rem; }
     .profile-card p { color: var(--muted); font-size: .94rem; margin: 0 0 10px; }
     main { max-width: var(--max); margin: auto; padding: 0 24px; }
@@ -109,7 +117,9 @@
         </div>
       </div>
       <aside class="profile-card">
-        <div class="profile-mark" aria-hidden="true">AB</div>
+       <img src="profile.png"
+     alt="Dr. Anal Bhowmik"
+     class="profile-photo">
         <h2>Research profile</h2>
         <p>Theoretical AMO physics and quantum science</p>
         <p><strong>Core methods:</strong> numerical quantum theory, atomic-structure calculations, and many-body approaches.</p>
