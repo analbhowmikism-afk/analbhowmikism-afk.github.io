@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic website of Dr. Anal Bhowmik, theoretical atomic, molecular and optical physicist.">
+  <title>Dr. Anal Bhowmik | Theoretical AMO Physics</title>
+  <style>
+    :root {
+      --ink: #17243a;
+      --muted: #58677d;
+      --accent: #176b87;
+      --accent-dark: #104d63;
+      --paper: #ffffff;
+      --wash: #f2f6f8;
+      --line: #dce5ea;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68;
+    }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-dark); }
+    .topbar { border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
+    .nav {
+      max-width: var(--max); margin: auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-weight: 750; letter-spacing: -.02em; color: var(--ink); text-decoration: none; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 17px; }
+    .navlinks a { color: var(--muted); text-decoration: none; font-size: .92rem; }
+    .navlinks a:hover { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, #f0f7fa 0%, #ffffff 70%); border-bottom: 1px solid var(--line); }
+    .hero-inner {
+      max-width: var(--max); margin: auto; padding: 76px 24px 68px;
+      display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(220px, .7fr); gap: 52px; align-items: center;
+    }
+    .eyebrow { color: var(--accent); font-weight: 750; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; }
+    h1 { font-size: clamp(2.35rem, 5vw, 4.1rem); line-height: 1.08; letter-spacing: -.045em; margin: 12px 0 14px; }
+    .subtitle { font-size: 1.18rem; color: var(--muted); margin: 0 0 20px; }
+    .intro { max-width: 690px; font-size: 1.04rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .button { display: inline-block; padding: 10px 16px; border: 1px solid var(--accent); border-radius: 7px; text-decoration: none; font-weight: 650; }
+    .button.primary { background: var(--accent); color: white; }
+    .button.secondary { color: var(--accent); background: white; }
+    .profile-card { border: 1px solid var(--line); border-radius: 14px; background: white; padding: 24px; box-shadow: 0 12px 30px rgba(25,50,70,.06); }
+    .profile-mark { width: 88px; height: 88px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: white; font-size: 1.7rem; font-weight: 750; margin-bottom: 17px; }
+    .profile-card h2 { margin: 0 0 7px; font-size: 1.1rem; }
+    .profile-card p { color: var(--muted); font-size: .94rem; margin: 0 0 10px; }
+    main { max-width: var(--max); margin: auto; padding: 0 24px; }
+    section { padding: 55px 0; border-bottom: 1px solid var(--line); }
+    section:last-child { border-bottom: 0; }
+    h2.section-title { font-size: 1.7rem; letter-spacing: -.025em; margin: 0 0 22px; }
+    h3 { line-height: 1.35; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .topic, .item { border: 1px solid var(--line); border-radius: 10px; padding: 19px; background: #fff; }
+    .topic h3, .item h3 { margin: 0 0 7px; font-size: 1.04rem; }
+    .topic p, .item p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .timeline { border-left: 2px solid var(--line); padding-left: 22px; margin-left: 7px; }
+    .timeline-item { position: relative; margin: 0 0 24px; }
+    .timeline-item::before { content: ""; position: absolute; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; left: -28px; top: 8px; }
+    .timeline-item h3 { margin: 0 0 3px; }
+    .meta { color: var(--muted); font-size: .92rem; }
+    .pub-list { padding-left: 22px; }
+    .pub-list li { margin: 0 0 15px; padding-left: 5px; }
+    .note { background: var(--wash); border-left: 4px solid var(--accent); padding: 15px 18px; border-radius: 0 8px 8px 0; color: var(--muted); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    footer { background: var(--wash); color: var(--muted); text-align: center; padding: 22px; font-size: .88rem; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .hero-inner { grid-template-columns: 1fr; padding-top: 48px; gap: 28px; }
+      .profile-card { max-width: 440px; }
+      .two-col, .topic-grid, .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">Anal Bhowmik</a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Theoretical Atomic, Molecular &amp; Optical Physics</div>
+        <h1>Dr. Anal Bhowmik</h1>
+        <p class="subtitle">Quantum optics · Rydberg atoms · Ultracold quantum matter</p>
+        <p class="intro">
+          I am a theoretical physicist working at the interface of atomic physics, quantum optics,
+          and quantum many-body theory. My research explores how light interacts with atoms,
+          how Rydberg states can be controlled and trapped, and how correlations shape the
+          dynamics of ultracold quantum systems.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#research">Explore my research</a>
+          <a class="button secondary" href="cv.pdf">Download CV (add your CV PDF)</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="profile-mark" aria-hidden="true">AB</div>
+        <h2>Research profile</h2>
+        <p>Theoretical AMO physics and quantum science</p>
+        <p><strong>Core methods:</strong> numerical quantum theory, atomic-structure calculations, and many-body approaches.</p>
+        <p><strong>Programming:</strong> Fortran, Python, MATLAB, Mathematica</p>
+        <p><a href="#contact">Get in touch →</a></p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p>
+        My research experience spans postdoctoral work at the University of Oklahoma, USA,
+        and the University of Haifa, Israel, following my PhD at the Indian Institute of Technology
+        Kharagpur, India. I combine analytical insight with computational methods to investigate
+        atomic properties, atom–light interactions, and interacting quantum gases.
+      </p>
+      <p>
+        I am interested in fundamental questions in quantum physics as well as their potential
+        connections to precision spectroscopy, quantum simulation, quantum metrology, and sensing.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">Research interests</h2>
+      <div class="topic-grid">
+        <article class="topic">
+          <h3>Rydberg atoms and light</h3>
+          <p>Optical forces, dynamic polarizability, magic wavelengths, polarization effects, and the interaction of Rydberg states with structured light.</p>
+        </article>
+        <article class="topic">
+          <h3>Quantum optics and trapping</h3>
+          <p>Light-induced atomic control, optical trapping, state-dependent energy shifts, and theoretical routes toward precision spectroscopy.</p>
+        </article>
+        <article class="topic">
+          <h3>Ultracold many-body systems</h3>
+          <p>Quantum dynamics, tunnelling, fragmentation, correlations, and transport in interacting Bose gases and bosonic Josephson junctions.</p>
+        </article>
+        <article class="topic">
+          <h3>Coupled-cluster methods</h3>
+          <p>Many-body approaches for multicomponent bosonic systems, including interspecies correlations and extensions to more complex mixtures.</p>
+        </article>
+        <article class="topic">
+          <h3>Atomic structure and spectroscopy</h3>
+          <p>Computational atomic properties, transition matrix elements, polarizabilities, and spectroscopy of atoms and ions.</p>
+        </article>
+        <article class="topic">
+          <h3>Quantum technologies</h3>
+          <p>Theoretical foundations relevant to quantum sensing, quantum simulation, and precision measurement with atomic systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Academic experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Postdoctoral Researcher — University of Oklahoma, USA</h3>
+          <div class="meta">April 2023 – March 2026 · Mentor: Prof. Doerte Blume</div>
+          <p>Research on Rydberg atom–light interactions, optical forces, polarizability, and trapping of Rydberg states.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Postdoctoral Researcher — University of Haifa, Israel</h3>
+          <div class="meta">December 2018 – March 2023 · Mentor: Prof. Ofir E. Alon</div>
+          <p>Research on many-body dynamics and fragmentation in ultracold Bose gases, and coupled-cluster theory for bosonic mixtures.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>PhD in Physics — Indian Institute of Technology Kharagpur, India</h3>
+          <div class="meta">Completed 2018 · Supervisor: Prof. Sonjoy Majumder</div>
+          <p>Thesis: “Interaction of vortex beam with ultra-cold atoms: Mechanism and applications.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Selected publications</h2>
+      <p class="meta">A short selection is shown below. Add DOI links and your complete publication list before publishing.</p>
+      <ol class="pub-list">
+        <li><strong>Forces on alkali Rydberg atoms due to non-linearly polarized light.</strong><br>
+          A. Bhowmik and D. Blume, <em>Physical Review A</em> <strong>111</strong>, 053120 (2025).
+        </li>
+        <li><strong>Coupled-cluster theory for a binary mixture of bosons.</strong><br>
+          A. Bhowmik and collaborators, <em>Journal of Chemical Physics</em> <strong>160</strong>, 044105 (2024).<br>
+          <span class="meta">Please verify the author list and exact title against the published paper before launch.</span>
+        </li>
+        <li><strong>Many-body dynamics and fragmentation in a two-dimensional bosonic Josephson junction.</strong><br>
+          A. Bhowmik and collaborators, <em>New Journal of Physics</em> <strong>26</strong>, 123035 (2024).<br>
+          <span class="meta">Replace this descriptive title with the exact published title and author list.</span>
+        </li>
+        <li><strong>Magic wavelengths of cesium in optical trapping configurations.</strong><br>
+          M. Gaudesius, J. Biedermann, and D. Blume, <em>Physical Review A</em> <strong>110</strong>, 043114 (2024).<br>
+          <span class="meta">Confirm your contribution and whether you want this collaborative paper included in the selected list.</span>
+        </li>
+      </ol>
+      <p><a href="#contact">Request a full publication list by email</a></p>
+    </section>
+
+    <section id="teaching">
+      <h2 class="section-title">Teaching and mentoring</h2>
+      <div class="two-col">
+        <div class="item">
+          <h3>Teaching</h3>
+          <p>Experience supporting undergraduate and postgraduate teaching in classical mechanics, quantum mechanics, electromagnetism, and optics, with an emphasis on conceptual clarity and problem-solving.</p>
+        </div>
+        <div class="item">
+          <h3>Student research and computation</h3>
+          <p>Interested in mentoring students in theoretical physics, scientific programming, numerical methods, atomic calculations, and computational studies of quantum systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2 class="section-title">Methods and computational tools</h2>
+      <p>
+        Fortran · Python · MATLAB · Mathematica · Atomic Rydberg Calculator (ARC) ·
+        Numerical methods · Atomic-structure calculations · Many-body quantum theory
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>Academic enquiries</h3>
+          <p>For research collaborations, student projects, seminars, or academic enquiries, please contact me by email.</p>
+          <p><strong>Email:</strong> <a href="mailto:YOUR.EMAIL@EXAMPLE.COM">YOUR.EMAIL@EXAMPLE.COM</a></p>
+        </div>
+        <div>
+          <h3>Academic profiles</h3>
+          <p>Add links to your Google Scholar, ORCID, arXiv, and institutional profile here.</p>
+          <p><a href="https://scholar.google.com/" rel="noopener">Google Scholar</a> ·
+             <a href="https://orcid.org/" rel="noopener">ORCID</a> ·
+             <a href="https://arxiv.org/" rel="noopener">arXiv</a></p>
+        </div>
+      </div>
+      <p class="note">Before publishing: replace the placeholder email, add your photograph if desired, upload your CV as <code>cv.pdf</code>, and verify publication titles, author lists, DOIs, and profile links.</p>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Dr. Anal Bhowmik · Academic website</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
